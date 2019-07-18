@@ -1,10 +1,10 @@
 html {
 	color: #000;
 	font: normal 16px/1.5em Times New Roman, serif;
-	background: #81865c url(img/bg.jpg) repeat left top;
+	background: #fff;
 }
 body {
-	margin: 0; 
+	margin: 0;
 }
 .clr {
 	clear: both;
@@ -112,10 +112,20 @@ h2, .h2 {
 }
 .main-content .sidebar h2 {
 	margin: 0 -15px;
-	padding: 12px 15px;
+	padding: 0;
 	color: #fff;
 	line-height: 24px;
 	background: #31420b;
+}
+.main-content .sidebar h2 label {
+	padding: 12px 15px;
+	display: block;
+}
+.main-content .sidebar h2 .hamb {
+	display: none;
+}
+.main-content .sidebar #menu-checkbox {
+	display: none;
 }
 .main-content .sidebar .menu {
 	margin: 0;
@@ -126,4 +136,110 @@ h2, .h2 {
 .main-content .sidebar .menu a {
 	display: inline-block;
 	padding: 6px 0;
+}
+@media screen and (min-width: 941px) {
+	html {
+		background: #81865c url(img/bg.jpg) repeat left top;
+	}
+}
+@media screen and (max-width: 940px) {
+	.mainwrapper {
+		padding: 0;
+		min-width: 0;
+	}
+	.container {
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.green-line {
+		border-radius: 0;
+	}
+	.top-green-line {
+		text-align: center;
+	}
+	.main-content .sidebar {
+		float: none;
+		width: 100%;
+	}
+	.main-content .sidebar .menu {
+		display: none;
+		border-bottom: 1px solid #31420b;
+	}
+	.main-content .sidebar h2  {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+	}
+	.main-content .sidebar h2 .hamb {
+		position: relative;
+		display: inline-block;
+		margin-right: 16px;
+		margin-bottom: 5px;
+		width: 32px;
+		height: 5px;
+		background: #fff;
+	}
+	.main-content .sidebar h2 .hamb:after,
+	.main-content .sidebar h2 .hamb:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+	.main-content .sidebar h2 .hamb:after {
+		border-top: 5px solid #fff;
+		padding-bottom: 7px;
+		bottom: 100%;
+	}
+	.main-content .sidebar h2 .hamb:before {
+		border-bottom: 5px solid #fff;
+		padding-top: 7px;
+		top: 100%;
+	}
+	#menu-checkbox:checked ~ .menu {
+		display: block;
+	}
+	.main-content .sidebar .menu a {
+		display: block;
+		text-align: center;
+	}
+	.main-content .article {
+		float: none;
+		width: 100%;
+	}
+	.main-content .article img {
+		display: block;
+		width: 100%;
+	}
+}
+@media screen and (max-width: 720px) {
+	.header .logo {
+		float: none;
+		margin: 0 auto;
+	}
+	.header .info {
+		float: none;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 480px) {
+	.header .logo {
+		width: 210px;
+	}
+	.header .logo img {
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	.header .logo .top {
+		padding-top: 0;
+	}
+	.green-line p {
+		text-align: center;
+	}
+	.green-line p.right {
+		float: none;
+	}
 }
